@@ -1,0 +1,50 @@
+ProjectName ZynqImageProcessing
+Files {
+	 Schematics {
+		{$PRJDIR/schematics/zynqIP.h}
+	 } 
+	 Models {
+		{$PRJDIR/../../imagep/fpga_hw/models/fpga_memory.mb}
+		{$PRJDIR/../../imagep/fpga_hw/models/ImageCapture.mb}
+		{$PRJDIR/../../imagep/fpga_hw/models/LinuxFrameBufferDisplay.mb}
+		{$PRJDIR/../../imagep/fpga_hw/models/ImageProcessing.mb}
+		{$PRJDIR/../../imagep/fpga_hw/models/axi32_axi128.mb}
+		{$PRJDIR/../../imagep/fpga_hw/models/axi128_axi32.mb}
+		{$PRJDIR/../../imagep/fpga_hw/models/FPGA_AXI_BUS.mb}
+		{$PRJDIR/../../jpeg/models/JPEG_ENCODER.mb}
+	 } 
+	 Sources {
+		{$PRJDIR/sc_main.cpp}
+		{$PRJDIR/../../jpeg/jpeg_algorithm/bitstream.cpp}
+		{$PRJDIR/../../jpeg/jpeg_algorithm/bmp.cpp}
+		{$PRJDIR/../../jpeg/jpeg_algorithm/huff.cpp}
+		{$PRJDIR/../../jpeg/jpeg_algorithm/jpeg.cpp}
+		{$PRJDIR/../../jpeg/jpeg_algorithm/dct.cpp}
+	 } 
+}
+Designs {{$PRJDIR/sc_main.cpp}}
+Simulations /store/data/ew/XilinxImagep/zynq_hw/ZynqImageProcessing/sim
+Folders {
+	 Sources {*.c *.cpp *.C *.cxx *.cc} 
+	 {Public Headers} {*.h *.hpp *.H *.hxx *.hh} 
+	 Models *.mb 
+	 Schematics {} 
+	 Documentation {*.txt *.TXT *.doc *.DOC *.pdf *.PDF *.html *.HTML *.htm *.HTM *.ps *.PS} 
+	 {Linked Binaries} {*.o *.a *.so} 
+	 {Other Binaries} {*.exe *.x} 
+}
+IncludePaths {{$PRJDIR/../../jpeg/models} {$PRJDIR/../../jpeg/jpeg_algorithm} {$PRJDIR/../../jpeg/jpeg_algorithm/catapult_include} {$PRJDIR/../../imagep/fpga_hw/fswebcam}}
+GeneralCompilationOptions -Wall
+AlwaysCompileInCPPMode 1
+LinkPackages {zynq zynq_catalogue model_builder models_catalogue}
+LinkObjects {{$PRJDIR/../../imagep/fpga_hw/fswebcam/libfswebcam.a}}
+LinkOptions -lgd
+ProjectLibraryType archive
+ProjectComponentsLibraryPath {$PRJDIR/$PRJFILE_BASENAME/interfaces}
+ProjectWorkingDirectory {$PRJDIR/$PRJFILE_BASENAME/build}
+HasTLMSupport 0
+CompiledWithTLMSupport 0
+IsUsePathVariables 1
+PlatformName ZynqImageProcessing
+ProjectReadOnly 0
+ProjectBuildMultiPlatform 0

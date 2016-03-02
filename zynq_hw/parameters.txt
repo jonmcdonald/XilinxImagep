@@ -1,0 +1,17 @@
+@include $env(VISTA_ROOT)/platforms/zynq/parameters.txt
+
+top.Zynq_SoC_inst.cpu_inst0.CPU_INST0.PV.cpu0.core.elf_image_file = /store/tools/vista4.2alpha1/platforms/zynq/Software/bare-metal/Factorial
+#top.Zynq_SoC_inst.sdhc_inst0.image_file = ../A10_sw/buildsocvpsd/sd-angstrom-v2014.12-arria10swvp.img
+
+top.Zynq_SoC_inst.console_inst1.connected = 0
+
+#vlan:tcp_napt = :3624 => :8080 ; :5684 => :23 ;:5247 => :69 ; :9547 => :22 ; :8524 => :21 ; :6527 => :53 ; :10010 => :10010 ; :5555 => :5555
+
+#  0xC0000000 (start of FPGA AXI)
+@begintcl
+  set env(FPGA_TOP) top.fpga_inst
+@endtcl
+@include ../../imagep/fpga_hw/parameters.txt
+
+#trace_script = trace.tcl
+
