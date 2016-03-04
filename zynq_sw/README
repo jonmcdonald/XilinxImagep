@@ -1,0 +1,22 @@
+~~~~~~~~~~~~~~~~~
+edit setup_kernel.sh to point at the xilinx toolchain
+
+source ./setup_kernel.sh
+
+cd linux-xlnx
+make -j 20
+
+~~~~~~~~~~~~~~~~~
+edit buildroot_patches/.config to point at the xilinx toolchain
+
+source ./setup_buildroot.sh
+
+cd buildroot-2013.02
+make -j 20
+
+~~~~~~~~~~~~~~~~~
+cd boot-wrapper
+./build.sh
+
+
+

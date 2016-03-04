@@ -32,15 +32,10 @@ int sc_main(int argc, char *argv[]) {
 //v2: begin of channel declarations section
 //v2: end of channel declarations section
 
-
-printf("going to instantiate top\n");
-
 //v2: begin of instantiations section
 //v2: instance inst_zynqIP - instance number 0 of module zynqIP
 zynqIP *inst_zynqIP = new zynqIP("top");
 //v2: end of instantiations section
-
-printf("going to start sim\n");
 
 
 //v2: begin of ports assignment section
