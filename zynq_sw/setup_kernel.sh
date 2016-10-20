@@ -1,4 +1,4 @@
-export TOOL_CHAIN=/store/tools/SDK/2015.4/gnu/arm/lin/bin
+export TOOL_CHAIN=/store/tools/Xilinx/SDK/2016.2/gnu/arm/lin/bin
 export TARGET=arm-xilinx-linux-gnueabi
 
 export CROSS_COMPILE=$TOOL_CHAIN/$TARGET-
